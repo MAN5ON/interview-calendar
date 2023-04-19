@@ -1,5 +1,7 @@
 import React from "react";
+import styled from "styled-components";
 
 export const Hours = () => {
-	return <div>Hours</div>;
+	const Hours = styled.div``;
+	return <Hours></Hours>;
 };
