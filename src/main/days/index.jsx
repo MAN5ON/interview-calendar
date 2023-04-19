@@ -7,13 +7,10 @@ import {
 	MYear,
 	Week,
 	WeekBTN,
-	WeekTD,
 	WeekTH,
 } from "../../style/styled";
-import styled from "styled-components";
 
 export const Days = () => {
-	const MonthDays = styled(Week);
 	const daysOfWeek = ["M", "T", "W", "T", "F", "S", "S"];
 	const months = [
 		"January",
