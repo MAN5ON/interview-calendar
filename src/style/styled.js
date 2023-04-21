@@ -68,19 +68,18 @@ export const WeekTH = styled.th`
 	font-size: 12px;
 `
 
-export const WeekBTN = styled.button`
+export const DayNumber = styled.p`
 	height: 2rem;
 	width: 2rem;
+	margin: 0 auto;
+	line-height: 2;
+	align-items: center;
 	font-size: 18px;
 	font-weight: 400;
 	cursor: pointer;
 	border: none;
 	border-radius: 1.5rem;
 	background: none;
-	&:active {
-		background-color: red;
-		color: white;
-	}
 `
 
 export const MYear = styled.div`
