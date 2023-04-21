@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useContext, useState } from "react";
+import { StateContext } from "../../store/stateContext";
+
 import {
 	BackArr,
 	DayNumber,
@@ -11,7 +13,9 @@ import {
 } from "../../style/styled";
 
 export const Days = () => {
+	const { state, dispatch } = useContext(StateContext);
 	const [date, setDate] = useState(new Date());
+	const today = state.today;
 	const daysOfWeek = ["M", "T", "W", "T", "F", "S", "S"];
 	const monthsOfYear = [
 		"January",
@@ -27,7 +31,23 @@ export const Days = () => {
 		"November",
 		"December",
 	];
+	const weekObjects = [];
 	const weekDates = [];
+
+	useEffect(() => {
+		dispatch({
+			type: "changeWeek",
+			payload: weekDates,
+		});
+
+		if (today) {
+			setDate(new Date());
+			dispatch({
+				type: "setToday",
+				payload: 0,
+			});
+		}
+	}, [date, today]);
 
 	// Функция для переключения на предыдущую неделю
 	const prevWeek = () => {
@@ -54,7 +74,8 @@ export const Days = () => {
 	for (let i = 0; i < daysOfWeek.length; i++) {
 		const day = new Date(weekStart);
 		const isToday = day.toDateString() === new Date().toDateString();
-		weekDates.push(
+		weekDates.push(day.toDateString());
+		weekObjects.push(
 			<DayNumber
 				key={day}
 				onClick={() => console.log(weekDates)}
@@ -66,6 +87,7 @@ export const Days = () => {
 				{day.getDate()}
 			</DayNumber>
 		);
+
 		weekStart.setDate(weekStart.getDate() + 1);
 	}
 
@@ -81,7 +103,7 @@ export const Days = () => {
 				</thead>
 				<tbody>
 					<tr>
-						{weekDates.map((day, id) => (
+						{weekObjects.map((day, id) => (
 							<td key={id}>{day}</td>
 						))}
 					</tr>

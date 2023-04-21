@@ -76,7 +76,6 @@ export const DayNumber = styled.p`
 	align-items: center;
 	font-size: 18px;
 	font-weight: 400;
-	cursor: pointer;
 	border: none;
 	border-radius: 1.5rem;
 	background: none;
