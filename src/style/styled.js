@@ -15,6 +15,8 @@ export const AppWrapper = styled.div`
 	border-radius: 5px;
 	@media (max-width: 740px) {
 	   	width: 100%;
+		height: 100vh;
+		margin: 0 auto;
   	}
 	
 `
