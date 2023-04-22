@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-import { StateContext } from "../../store/stateContext";
+import { StateContext } from "../../store";
 
 import {
 	BackArr,
@@ -16,6 +16,7 @@ export const Days = () => {
 	const { state, dispatch } = useContext(StateContext);
 	const [date, setDate] = useState(new Date());
 	const today = state.today;
+	const tasks = state.tasksArr;
 	const daysOfWeek = ["M", "T", "W", "T", "F", "S", "S"];
 	const monthsOfYear = [
 		"January",
@@ -40,6 +41,10 @@ export const Days = () => {
 			payload: weekDates,
 		});
 
+		dispatch({
+			type: "filterTasks",
+			payload: tasks.filter((task) => weekDates.includes(task.date)),
+		});
 		if (today) {
 			setDate(new Date());
 			dispatch({
@@ -47,7 +52,7 @@ export const Days = () => {
 				payload: 0,
 			});
 		}
-	}, [date, today]);
+	}, [date, today, tasks]);
 
 	// Функция для переключения на предыдущую неделю
 	const prevWeek = () => {

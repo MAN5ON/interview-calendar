@@ -47,12 +47,13 @@ export const HeadButton = styled.button`
 	}
 `;
 
-export const HeadH2 = styled.h2`
+export const HeadH2 = styled.header`
 	font-weight: 200;
-	padding: 0 30px;
+	font-size: 24px;
+	padding: 25px;
 `;
 
-export const DaysWrapper = styled.div`
+export const DaysWrapper = styled.nav`
 	text-align: center;
 	background-color: #e5e7eb;
 	padding-left: 7%;
@@ -102,7 +103,7 @@ export const MainWrapper = styled.div`
 	width: 100%;
 `;
 
-export const Footer = styled.div`
+export const Footer = styled.footer`
 	position: absolute;
 	bottom: 0px;
 	width: 100%;
