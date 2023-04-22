@@ -1,3 +1,30 @@
+# Interview Calendar for Uchi.ru
+
+Реализовано на чистом React + Styled Components без использования сторонних библиотек из-за того, что в ТЗ нет явного разрешения на это. Верстка сделана на глаз, т.к. из макетов только скриншоты.
+
+## Веб приложение с недельным календарем
+
+Нужно реализовать статичное веб приложение (SPA) используя create-react-app, React, styled-components и выложить его на Heroku.
+
+Макеты c версткой календаря для мобильных браузеров:
+
+-   [Main Mobile](./img/1.%20Main%20Mobile@2x.png) - Основной вид календаря.
+-   [Delete Mobile](./img/2.%20Delete%20Mobile%402x.png) - После выбора события, появляется кнопка Delete.
+-   [Add Mobile](./img/3.%20Add%20Mobile@2x.png) - После нажатия `+` появляется стандартный попап (функция `prompt`) добавления события.
+
+Для ширины страницы `<= 740px` календарь равномерно растягивается. Для ширины страницы `> 740px` ширина календаря `= 740px`, календарь выравнивантвается по горизонтали по центру страницы.
+
+#### Материалы:
+
+React:
+https://facebook.github.io/create-react-app/
+
+styled-components:
+https://medium.com/styled-components/styled-components-getting-started-c9818acbcbbd
+
+Heroku:
+https://blog.heroku.com/deploying-react-with-zero-configuration
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

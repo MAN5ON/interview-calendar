@@ -115,12 +115,9 @@ export const HoursWrapper = styled.main`
 	`;
 export const FirstCol = styled.nav`
 	width: 10%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	align-content: flex-start;
 	& p {
-		margin: 7px 0 30px 0;
+		margin: 0.5rem 0 2.5rem 0;
+		text-align: center;
 		font-weight: 500;
 		color: #9ca3af;
 		line-height: 0;
@@ -130,6 +127,18 @@ export const HoursTable = styled.table`
 	table-layout: fixed;
 	width: 90%;
 	background-color: #f3f4f6;
+	& td {
+		padding: 1rem;
+	};
+	& #empty {
+		background-color: white;
+	}
+	& #edle {
+		background-color: #e0e7ff;
+	}
+	& #active {
+		background-color: #c7d2fe;
+	}
 `;
 
 export const Footer = styled.footer`

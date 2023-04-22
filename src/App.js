@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
-import { reducer, initialState, StateContext } from "./store";
+import { reducer, StateContext } from "./store";
+import { initialState } from "./store/initialState";
 import { Header } from "./header";
 import { Calendar } from "./main";
 import { AppWrapper } from "./style/styled";

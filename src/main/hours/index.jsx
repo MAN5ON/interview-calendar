@@ -5,15 +5,16 @@ import { FirstCol, HoursTable, HoursWrapper } from "../../style/styled";
 export const Hours = () => {
 	const { state, dispatch } = useContext(StateContext);
 	const dates = state.filteredTaskArr;
-	const hours = Array.from({ length: 24 }, (_, h) => h);
+	const onRemove = state.onRemove;
 	const days = state.weekArr;
+	const hours = Array.from({ length: 24 }, (_, h) => h);
+
 	// Выбираем ячейку для удаления
 	const setRemove = (task) => {
-		task &&
-			dispatch({
-				type: "setRemove",
-				payload: task.id,
-			});
+		dispatch({
+			type: "setRemove",
+			payload: task ? task.id : "",
+		});
 	};
 
 	return (
@@ -41,15 +42,23 @@ export const Hours = () => {
 									(date) =>
 										date.date === day && date.hour === hour
 								);
+
 								return (
 									<td
+										id={
+											date && onRemove === date.id
+												? "active"
+												: date
+												? "edle"
+												: "empty"
+										}
 										onClick={() => setRemove(date)}
 										key={`${day}-${hour}`}
-										style={{
-											backgroundColor: date
-												? "#e0e7ff"
-												: "white",
-										}}
+										// style={{
+										// 	backgroundColor: date
+										// 		? "#e0e7ff"
+										// 		: "white",
+										// }}
 									></td>
 								);
 							})}
