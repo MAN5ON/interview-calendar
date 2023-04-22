@@ -75,7 +75,7 @@ export const Days = () => {
 			weekStart.getDay() +
 			(weekStart.getDay() === 0 ? -6 : 1)
 	);
-	//добавляем в массив дни недели
+	// Добавляем в массив дни недели
 	for (let i = 0; i < daysOfWeek.length; i++) {
 		const day = new Date(weekStart);
 		const isToday = day.toDateString() === new Date().toDateString();
